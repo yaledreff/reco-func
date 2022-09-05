@@ -1,0 +1,33 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "inFileUser",
+      "path":"data/dfArticlesPerActiveUser.csv",
+      "connection":"MyStorageConnectionString"
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "outFilePred",
+      "path":"data/dfPredictions.csv",
+      "connection":"MyStorageConnectionString"
+    }
+  ]
+}
